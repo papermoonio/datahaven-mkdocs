@@ -1,0 +1,333 @@
+/* TODO: Replace all XXX variables */
+
+:root {
+  /* Colors */
+  --dark: #000000; /* Default dark color */
+  --light: #ffffff; /* Default light color */
+  /* TODO: Add brand colors here */
+
+  /* Borders */
+  --border-radius: 0.3rem;
+  --border-width: 0.1rem;
+
+  /*
+  Custom admonition icons 
+  Should be base64 encoded SVGs.
+  */
+  --admonition-code-icon: url("data:image/svg+xml;base64,INSERT_HASH");
+}
+
+:root,
+[data-md-color-scheme="custom-light"] {
+  /* 
+  See the file containing the color definitions for a list of all CSS variables.
+  https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
+  */
+  --md-primary-fg-color: var(--dark);
+  --md-primary-bg-color: var(--light);
+
+  /*
+  Code highlighting color shades
+  Optional: For branded code snippets
+  */
+  /* --md-code-hl-number-color: XXX; Numbers */
+  /* --md-code-hl-function-color: XXX; Python function names */
+  /* --md-code-hl-name-color: XXX; JavaScript booleans, Python variable names */
+  /* --md-code-hl-string-color: XXX; Strings */
+  /* --md-code-hl-constant-color: XXX; Python print */
+  /* --md-code-hl-keyword-color: XXX; Imports, const, let, var, async, await, function, etc. */
+  /* --md-code-hl-comment-color: XXX; Comments */
+
+  /* Custom variables */
+  --admonition-note-bg: XXX; /* !!! note background */
+  --admonition-note-border: XXX; /* !!! note border */
+  --admonition-code-bg: XXX; /* !!! code background */
+  --admonition-code-border: XXX; /* !!! code border */
+  --border-color: XXX;
+  --typeset-a-color--hover: XXX;
+}
+
+[data-md-color-scheme="custom-dark"] {
+  /* 
+  See the file containing the color definitions for a list of all CSS variables.
+  https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
+  */
+  --md-primary-fg-color: var(--light);
+  --md-primary-bg-color: var(--dark);
+
+  /* Custom variables */
+  --admonition-note-bg: XXX; /* !!! note background */
+  --admonition-note-border: XXX; /* !!! note border */
+  --admonition-code-bg: XXX; /* !!! code background */
+  --admonition-code-border: XXX; /* !!! code border */
+  --border-color: XXX;
+  --typeset-a-color--hover: XXX;
+}
+
+/* General styling */
+.md-nav__link:focus,
+.md-nav__link:hover,
+.md-typeset a:focus,
+.md-typeset a:hover {
+  text-decoration: underline;
+  color: var(--typeset-a-color--hover);
+}
+
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset pre > code {
+  border-radius: var(--border-radius);
+}
+
+[data-md-color-scheme="default"] img[src$="#only-dark"],
+[data-md-color-scheme="slate"] img[src$="#only-light"] {
+  /* Hide dark images in light mode and vice versa */
+  display: none !important;
+}
+
+/* All other icons */
+.md-icon svg {
+  fill: var(--md-default-fg-color);
+}
+
+/* Hides paragraph mark at end of anchored text */
+.md-content .headerlink {
+  display: none;
+  visibility: hidden;
+}
+
+/* Make the primary section font larger on left nav */
+.md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+  font-size: 1.1em;
+  color: var(--md-default-fg-color);
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    font-size: 0.9em;
+  }
+}
+
+/* Set all non-primary sections font and margin size to be smaller */
+.md-nav__link.md-nav__link--index,
+.md-nav__link {
+  margin-top: 0.45em;
+  font-size: 0.9em;
+}
+
+/* Section lines */
+li > nav.md-nav[data-md-level="3"],
+li > nav.md-nav[data-md-level="4"] {
+  border-left: var(--border-width) solid var(--md-accent-fg-color);
+}
+
+/* Custom admonition styling */
+.md-typeset .admonition {
+  border-width: var(--border-width);
+}
+
+/* Admonition top background color */
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: var(--admonition-note-bg);
+}
+
+/* Styling for custom Admonition notes used for code */
+.md-typeset .admonition.code,
+.md-typeset details.code {
+  border-color: var(--admonition-note-border);
+}
+
+/* Admonition icon background color */
+/* Should be the same as the border color above */
+.md-typeset .code > .admonition-title,
+.md-typeset .code > summary {
+  background-color: var(--admonition-code-bg);
+}
+
+/* Admonition top background color */
+.md-typeset .code > .admonition-title::before,
+.md-typeset .code > summary::before {
+  background-color: var(--admonition-code-border);
+  -webkit-mask-image: var(--admonition-code-icon);
+  mask-image: var(--admonition-code-icon);
+}
+
+/* Styling for the Copy to Clipboard */
+/* Clipboard icon */
+.md-clipboard {
+  color: XXX;
+}
+
+.md-clipboard:focus,
+.md-clipboard:hover {
+  color: XXX;
+}
+
+.md-dialog {
+  text-align: center;
+}
+
+/* Styling for Tables */
+.md-typeset table:not([class]) {
+  border-radius: var(--border-radius);
+  display: inline-table;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  vertical-align: middle;
+}
+
+/* Tables centered */
+.md-typeset__scrollwrap {
+  text-align: center;
+}
+
+/* Tables in tabs */
+.tabbed-content .md-typeset__scrollwrap {
+  margin: 0;
+}
+
+.tabbed-content .md-typeset__table {
+  display: inline-table;
+  margin-bottom: 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+/* Tabbed Styling */
+.md-typeset .tabbed-labels {
+  box-shadow: none;
+  padding: 0.2em;
+}
+
+.md-typeset .tabbed-set {
+  border-radius: var(--border-radius);
+}
+
+.md-typeset .tabbed-content {
+  border: var(--border-width) solid var(--border-color);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.md-typeset .tabbed-labels > label {
+  opacity: 0.7;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--typeset-a-color--hover);
+  opacity: 1;
+}
+
+.js .md-typeset .tabbed-labels:before {
+  background: XXX;
+}
+
+/* Document date styling */
+.md-source-file {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+
+.md-source-file small {
+  display: flex;
+  align-items: end;
+}
+
+.source-file-label {
+  margin-right: 0.5em;
+}
+
+.source-file-seperator {
+  margin: 0 0.5em;
+}
+
+/* Disclaimer styling */
+.disclaimer,
+.page-disclaimer {
+  margin-top: auto;
+  margin-bottom: 1em;
+  font-size: x-small;
+  font-style: italic;
+}
+
+.page-disclaimer {
+  margin-top: 3em;
+}
+
+@media screen and (max-width: 30em) {
+  .source-file-seperator {
+    display: none;
+  }
+
+  .md-source-file {
+    margin: auto;
+  }
+
+  .md-source-file small {
+    display: block;
+    text-align: center;
+  }
+
+  .disclaimer {
+    margin: 2em auto;
+  }
+}
+
+/* Feedback widget styling */
+.md-feedback {
+  margin: 2em auto;
+  text-align: center;
+  border: var(--border-width) solid var(--md-primary-fg-color);
+  border-radius: var(--border-radius);
+  width: 30%;
+  padding: 0.7em;
+}
+
+.md-feedback__title {
+  font-weight: 300;
+}
+
+/* Footer Styling */
+.md-footer-meta__inner,
+.md-footer-meta__inner.md-grid {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.md-footer-meta__inner {
+  flex-direction: column;
+}
+
+.md-footer-meta__inner.md-grid:first-child {
+  padding: 0.5em;
+}
+
+.md-copyright {
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.network-links {
+  text-align: center;
+}
+
+.network-links > a {
+  margin-right: 1em;
+}
+
+.md-social__link svg {
+  max-height: 1rem;
+}
+
+/* 404 page */
+.not-found {
+  display: flex;
+  justify-content: center;
+}
