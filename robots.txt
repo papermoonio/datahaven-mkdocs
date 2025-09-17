@@ -1,3 +1,3 @@
 User-agent: * 
 
-Sitemap: https://XXX/sitemap.xml
+Sitemap: https://docs.datahaven.xyz/sitemap.xml

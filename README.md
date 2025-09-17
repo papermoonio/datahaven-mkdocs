@@ -1,27 +1,6 @@
-# mkdocs-template-light-dark
+# DataHaven Documentation Site (MkDocs Framework and Material Theme)
 
-This repository is a bare-bones template for quickly setting up a new documentation site with the mkdocs-material theme.
-
-This template supports dark and light themes. If the project is only using a single theme, please use the [mkdocs-standard-template](https://github.com/papermoonio/mkdocs-template-standard) template.
-
-## Onboarding Checklist
-
-If you're onboarding a new project, make sure to go through this checklist to customize the template:
-
-- [ ] Add the project's logo and favicon to the `material-overrides/assets/images/` directory and name them `XXX-favicon.png`, `XXX-logo.png`, and `XXX-logo-dark.png`. If the images aren't rendering, make sure the file names match the ones defined in the `mkdocs.yml` file
-- [ ] Replace all instances of `XXX` with the project's name, including the `XXX.css` file name
-- [ ] Update the `XXX.css` file to use the project's branding
-    - [ ] Add brand colors
-    - [ ] Style code snippets using brand colors
-    - [ ] Add brand fonts. If the desired fonts are available through Google Fonts, uncomment the `font` config in the `mkdocs.yml` file and add the font names. For any other type of font, uncomment the `extra_css` config in the `mkdocs.yml` file and add the font to `material-overrides/assets/stylesheets/extra.css`
-- [ ] Add the desired social icons and links to the `social` config in the `mkdocs.yml` file
-- [ ] Check the copyright information to make sure that it is correct
-- [ ] Add the project's Google Analytics property under the `analytics` config in the `mkdocs.yml` file. This should be a unique property specifically for the docs site
-- [ ] Check to make sure the GitHub repo URL in the feedback form under the `feedback` config in the `mkdocs.yml` file is correct
-- [ ] Create the home page. This template comes with a basic design that can be used, or you can create a custom home page if the project has requested a custom one
-- [ ] Create a `docs` repository to hold all of the documentation pages. Make sure that whatever the docs repository is named matches the `docs_dir` config in the `mkdocs.yml` file
-- [ ] Update the `.gitignore` file so that the docs repository is ignored
-- [ ] Update the `README.md` file to include information on the project, instructions on local development, and any other related information
+https://docs.datahaven.xyz
 
 ## About
 
@@ -32,7 +11,7 @@ This repository contains the mkdocs configuration files, theme overrides, and CS
 
 The actual content is stored in the docs repo and is pulled in during the build process.
 
-- [XXX Docs](https://github.com/XXX/XXX-docs)
+- [DataHaven Docs](https://github.com/moonbeam-foundation/datahaven-docs)
 
 ## Prerequisites
 
@@ -47,9 +26,9 @@ pip install -r requirements.txt
 With the dependencies installed, let's proceed to clone the necessary repos. For everything to work correctly, the file structure needs to be the following:
 
 ```text
-XXX-mkdocs
+datahaven-mkdocs
 |--- /material-overrides/ (folder)
-|--- /XXX-docs/ (repository)
+|--- /datahaven-docs/ (repository)
 |--- mkdocs.yml
 ```
 

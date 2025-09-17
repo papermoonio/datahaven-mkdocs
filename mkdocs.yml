@@ -1,62 +1,83 @@
-# TODO: Replace XXX with the project name
-site_name: XXX Docs
-site_url: https://XXX/ # The URL where your docs will be hosted
-home_url: https://XXX/ # The URL for the home button in the top left
-site_dir: /var/www/XXX-docs-static
-docs_dir: XXX-docs
-copyright: © 2025 XXX Foundation. All Rights Reserved.
-# Used for extra javascript files in the `docs` repository
-# extra_javascript:
-#   - js/example.js # Example of how to add a custom javascript file
-# Used for custom fonts. If youre using a publicly available font, this is not necessary
-# extra_css:
-#   - /assets/stylesheets/example.css # Example of how to add a custom css file
+# Site configurations
+site_name: DataHaven Docs
+site_url: https://docs.datahaven.xyz/ # The URL where your docs will be hosted
+home_url: https://datahaven.xyz/ # The URL for the home button in the top left
+site_dir: /var/www/datahaven-docs-static
+docs_dir: datahaven-docs
+copyright: © 2025 DataHaven. All Rights Reserved.
+exclude_docs: |
+   README.md
+   LICENSE.md
+
+# Extra CSS files
+extra_css:
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/terminal.css
+
+# Theme configuration
 theme:
   name: material
   custom_dir: material-overrides
-  favicon: /assets/images/XXX-favicon.png
-  logo: /assets/images/XXX-logo.png
-  logo_dark_mode: /assets/images/XXX-logo-dark.png # Only required if using dark and light modes
-  # font: # This is for Google Fonts
-  # text: XXX # Add the name of the font. The default is Roboto
-  # code: XXX # This is optional. The default is Roboto Mono
+  favicon: assets/images/datahaven-favicon.png
+  logo_light: assets/images/datahaven-logo-light.png
+  logo_dark: assets/images/datahaven-logo-dark.png
+  font:
+    text: Saans
   features:
-    - navigation.footer # Shows previous and next on the footer
-    - navigation.tabs # Top-level sections are rendered below the header (can be modified to in-line with CSS)
-    - navigation.tabs.sticky # When scrolling, the tabs remain at the top of the page
     - navigation.sections # Render top-level sections as groups in the sidebar
     - content.code.copy
-  # Used for light and dark mode feature
+  icon:
+    admonition:
+      code: material/code-not-equal-variant
   palette:
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: custom-light
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: custom-dark
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+
+# Extensions
 markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
   - codehilite
+  - md_in_html
   - meta 
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: True
+      line_spans: __span
+      pygments_lang_class: True
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets:
+      base_path: datahaven-docs/.snippets
+      url_download: True
+      dedent_subsections: True
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: True
   - toc:
       permalink: True
       title: Sections
-  - admonition
-  - pymdownx.snippets:
-      base_path: XXX-docs/.snippets
-  - pymdownx.tabbed:
-      alternate_style: True
-  - pymdownx.superfences
-  - pymdownx.details
-  - attr_list
+
+# Plugins
 plugins:
   - search
-  - awesome-pages
+  - awesome-nav
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
@@ -65,36 +86,46 @@ plugins:
       enabled: !ENV [ENABLED_GIT_REVISION_DATE, True]
   - macros:
       include_yaml:
-        - XXX-docs/variables.yml
+        - datahaven-docs/variables.yml
+
+# Build validation settings
+validation:
+  absolute_links: ignore
+  unrecognized_links: ignore
+
+# Extra configuration
 extra:
   generator: False
   social:
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/XXX
+      link: https://discord.gg/datahaven
       name: Discord
     - icon: fontawesome/brands/telegram
-      link: https://t.me/XXX
+      link: https://t.me/datahaven_announcements
       name: Telegram
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/XXX
-      name: Twitter
-    - icon: fontawesome/brands/github
-      link: https://github.com/XXX
-      name: GitHub
-  analytics:
-    provider: google
-    property: G-XXX
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Help us improve this page by submitting
-            <a href="https://github.com/XXX/XXX/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">additional feedback</a>.
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/datahaven_xyz
+      name: X
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@DataHavenxyz
+      name: YouTube    
+    # - icon: fontawesome/brands/github
+    #   link: https://github.com/XXX
+    #   name: GitHub
+  # analytics:
+  #   provider: google
+  #   property: G-XXX
+  #   feedback:
+  #     title: Was this page helpful?
+  #     ratings:
+  #       - icon: material/emoticon-happy-outline
+  #         name: This page was helpful
+  #         data: 1
+  #         note: >-
+  #           Thanks for your feedback!
+  #       - icon: material/emoticon-sad-outline
+  #         name: This page could be improved
+  #         data: 0
+  #         note: >-
+  #           Thanks for your feedback! Help us improve this page by submitting
+  #           <a href="https://github.com/XXX/XXX/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">additional feedback</a>.

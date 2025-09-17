@@ -1,4 +1,9 @@
 @font-face {
-    font-family: "INSERT_FONT";
-    src: url("fonts/INSERT_FONT_FILE_NAME.otf") format("opentype");
+  font-family: "Kreol";
+  src: url("fonts/KreolText-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Saans";
+  src: url("fonts/SaansRegular.otf") format("opentype");
 }
