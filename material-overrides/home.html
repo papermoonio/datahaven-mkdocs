@@ -10,33 +10,33 @@
 {% endblock %}
 
 {% block content %}
-  <div>
+  <div class="home">
     <div class="hero">
-      <div class="hero-content">
-        <h1>Welcome to Our Website</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <a href="#" class="btn">Learn More</a>
+      <img src="assets/images/home-hero.png" alt="Hero Image" class="hero-image">
+      <div class="column">
+        <h1>Documentation & Resources</h1>
+        <p>For DataHaven, the Data infrastructure purpose-built for AI.</p>
       </div>
     </div>
 
-    <div class="featured-content">
-      <div class="feature">
-        <img src="image1.jpg" alt="Feature 1">
+    <div class="featured-content grid cards">
+      <a class="feature" href="#">
+        <span class="badge">Access Data</span>
         <h2>Feature 1</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
+      </a>
 
-      <div class="feature">
-        <img src="image2.jpg" alt="Feature 2">
+      <a class="feature" href="#">
+        <span class="badge">Access Data</span>
         <h2>Feature 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      </a>
 
-      <div class="feature">
-        <img src="image3.jpg" alt="Feature 3">
+      <a class="feature" href="#">
+        <span class="badge">Access Data</span>
         <h2>Feature 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      </a>
     </div>
   </div>
 {% endblock %}

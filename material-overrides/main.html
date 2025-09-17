@@ -35,3 +35,32 @@
   </div>
 {% endblock %} 
 
+{% block scripts %}
+  {{ super() }}
+
+  <script>
+    const content = document.querySelector(".md-content");
+    const header = document.querySelector(".md-header");
+    const footer = document.querySelector(".md-footer");
+
+    function updateContentHeight() {
+      if (content && header && footer) {
+        const contentHeight = content.offsetHeight;
+        const headerHeight = header.offsetHeight;
+        const footerHeight = footer.offsetHeight;
+
+        const pageHeight = headerHeight + footerHeight + contentHeight;
+        const viewportHeight = window.innerHeight;
+
+        if (pageHeight < viewportHeight) {
+          content.style.minHeight = `${viewportHeight - headerHeight - footerHeight}px`;
+        } else {
+          content.style.minHeight = 'auto';
+        }
+      }
+    }
+
+    updateContentHeight();
+    window.addEventListener("resize", updateContentHeight);
+  </script>
+{% endblock %}

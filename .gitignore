@@ -1,3 +1,5 @@
 datahaven-docs*
 venv
 .DS_Store
+
+mkdocs-cards-plugin*
