@@ -11,7 +11,7 @@ This repository contains the mkdocs configuration files, theme overrides, and CS
 
 The actual content is stored in the docs repo and is pulled in during the build process.
 
-- [DataHaven Docs](https://github.com/moonbeam-foundation/datahaven-docs)
+- [DataHaven Docs](https://github.com/datahaven-xyz/datahaven-docs)
 
 ## Prerequisites
 
