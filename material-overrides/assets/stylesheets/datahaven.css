@@ -335,19 +335,18 @@
   color: var(--cream);
 }
 
+.md-nav__link[for]:focus,
+.md-nav__link[href]:focus {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
 .md-nav__link--active,
 .md-nav__link[for]:hover,
 .md-nav__link[href]:hover {
   color: var(--cream);
   background: var(--warm-brown);
   border-radius: var(--border-radius);
-  text-decoration: none;
-}
-
-.md-nav__link[for]:focus,
-.md-nav__link[href]:focus {
-  background-color: unset;
-  color: var(--md-default-fg-color);
   text-decoration: none;
 }
 
@@ -515,13 +514,17 @@ a.md-social__link {
   border-color: var(--border-color);
 }
 
+.md-typeset table:not([class]) thead td:not([align]),
+.md-typeset table:not([class]) thead th:not([align]) {
+  text-align: center;
+}
+
 .md-typeset table:not([class]) tr:not(:first-child) td {
   border: none;
 }
 
-/* Tables centered */
-.md-typeset__scrollwrap {
-  text-align: center;
+.md-typeset table:not([class]) td {
+  padding: .9375em 2em;
 }
 
 /* --- Tabs --- */
@@ -550,8 +553,12 @@ a.md-social__link {
 }
 
 .md-typeset .tabbed-content {
-  padding-left: 0.75em;
-  padding-right: 0.75em;
+  padding: 1em;
+}
+
+/* Text in tabs */
+.tabbed-block > p:first-child {
+  margin-top: 0;
 }
 
 /* Tables in tabs */
@@ -562,7 +569,7 @@ a.md-social__link {
 .tabbed-content .md-typeset__table {
   display: inline-table;
   margin-bottom: 0;
-  padding: 1em 0;
+  padding: 0;
   width: 100%;
 }
 
