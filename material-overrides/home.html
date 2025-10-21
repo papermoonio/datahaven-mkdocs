@@ -1,41 +1,41 @@
-{% extends "main.html" %}
+{% extends "main.html" %} 
 
 {% block htmltitle %}
   <title>DataHaven Docs</title>
-{% endblock %}
+{% endblock %} 
 
-{% block styles %}
-	{{ super() }}
-  <link rel="stylesheet" href="{{ 'assets/stylesheets/home.css' | url }}">
-{% endblock %}
+{% block styles %} 
+    {{ super() }}
+  <link rel="stylesheet" href="{{ 'assets/stylesheets/home.css' | url }}" />
+{% endblock %} 
 
 {% block content %}
   <div class="home">
     <div class="hero">
-      <img src="assets/images/home-hero.png" alt="Hero Image" class="hero-image">
+      <img src="assets/images/home-hero.png" alt="Hero Image" class="hero-image" />
       <div class="column">
-        <h1>Documentation & Resources</h1>
-        <p>For DataHaven, the Data infrastructure purpose-built for AI.</p>
+        <h1>DataHaven Documentation & Resources</h1>
+        <p>Secure, verifiable data infrastructure purpose-built for AI.</p>
       </div>
     </div>
 
     <div class="featured-content grid cards">
-      <a class="feature" href="#">
-        <span class="badge">Manage Data</span>
-        <h2>Feature 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a class="feature" href="/store-and-retrieve-data/use-storagehub-sdk/get-started/">
+        <span class="badge">Store and Retrieve Data</span>
+        <h2>Set Up Your Environment</h2>
+        <p>Install dependencies and get your workspace ready to start building.</p>
       </a>
 
-      <a class="feature" href="#">
-        <span class="badge">Provide Storage</span>
-        <h2>Feature 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a class="feature" href="/store-and-retrieve-data/use-storagehub-sdk/end-to-end-storage-workflow/">
+        <span class="badge">Store and Retrieve Data</span>
+        <h2>Build a Data Workflow End-to-End</h2>
+        <p>Learn step-by-step how to store a file on DataHaven and retrieve it back from the network.</p>
       </a>
 
-      <a class="feature" href="#">
+      <a class="feature" href="/how-it-works/data-and-provider-model/data-flow/">
         <span class="badge">How It Works</span>
-        <h2>Feature 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <h2>Learn About the Data Lifecycle</h2>
+        <p>A high-level look at how data moves through DataHaven from bucket creation to file verification.</p>
       </a>
     </div>
   </div>
