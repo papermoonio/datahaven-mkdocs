@@ -1,0 +1,131 @@
+:root,
+[data-md-color-scheme="custom-light"] {
+  --card-border: var(--warm-brown-20);
+}
+
+[data-md-color-scheme="custom-dark"] {
+  --card-border: var(--warm-brown-80);
+}
+
+/* --- Layout --- */
+.md-content__inner {
+  margin-right: 4rem;
+  max-width: 75%;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 86.2344em) {
+  .md-content__inner {
+    max-width: 100%;
+    margin-right: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 46.2344em) {
+  .md-content__inner {
+    margin: 0 0 1.2rem;
+  }
+}
+
+/* --- Hero --- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.hero img {
+  width: 30%;
+  height: auto;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-size: 1.25em;
+  margin-bottom: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+@media screen and (max-width: 46.2344em) {
+  .hero {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .hero img {
+    width: 75%;
+    margin: auto;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1.1em;
+  }
+}
+
+/* ---- Featured Content --- */
+.grid.cards {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.grid.cards a {
+  background-color: var(--secondary-bg-color);
+  border-color: var(--secondary-bg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.grid.cards a:hover {
+  transform: translateY(-5px);
+}
+
+.grid.cards .badge {
+  color: var(--dark);
+  background-color: var(--light-green);
+  border-radius: var(--border-radius);
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8em;
+  width: fit-content;
+}
+
+.grid.cards a h2 {
+  margin: 0;
+}
+
+.grid.cards a:hover h2 {
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .grid.cards a p {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+@media screen and (max-width: 46.2344em) {
+  .grid.cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

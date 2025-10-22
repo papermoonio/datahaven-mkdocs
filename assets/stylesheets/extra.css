@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Kreol";
+  src: url("fonts/KreolText-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Saans";
+  src: url("fonts/SaansRegular.otf") format("opentype");
+}
