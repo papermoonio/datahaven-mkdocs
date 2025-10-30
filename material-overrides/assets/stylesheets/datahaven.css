@@ -385,6 +385,11 @@
 @media screen and (max-width: 76.2344em) {
   .md-nav--primary .md-nav__title[for="__drawer"] {
     background-color: var(--md-default-fg-color--lightest);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .md-nav--primary .md-nav__title {
+    border-bottom: 1px solid var(--border-color);
   }
 
   .md-nav--primary .md-nav__item--active > .md-nav__link,
@@ -442,6 +447,10 @@
 .md-footer {
   border-top: var(--border);
   border-bottom: var(--border);
+}
+
+html .md-footer-meta.md-typeset a {
+  text-decoration: none;
 }
 
 .legal,
@@ -529,7 +538,7 @@ a.md-social__link {
 }
 
 .md-typeset table:not([class]) td {
-  padding: .9375em 2em;
+  padding: 0.9375em 2em;
 }
 
 /* --- Tabs --- */
