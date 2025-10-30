@@ -591,7 +591,6 @@ a.md-social__link {
 .md-typeset .grid > .card:hover {
   box-shadow: none;
   border-color: var(--border-color);
-  cursor: pointer;
 }
 
 /* Clickable cards */
