@@ -377,7 +377,7 @@
   }
 
   .md-nav__link {
-    padding: 0.2rem;
+    padding: 0.2rem 0.5rem;
     margin-top: 0.1rem;
   }
 }
@@ -419,7 +419,7 @@
 
   .md-nav--secondary .md-nav__title {
     box-shadow: none;
-    padding: 0.2rem 0;
+    padding: 0.2rem 0.3rem;
     margin-left: 0.8rem;
     margin-bottom: 0.5em;
     font-size: 0.9em;
@@ -427,7 +427,7 @@
   }
 
   .md-sidebar--secondary .md-nav__link {
-    padding: 0.2rem;
+    padding: 0.2rem 0.5rem;
     margin-top: 0.1rem;
   }
 
