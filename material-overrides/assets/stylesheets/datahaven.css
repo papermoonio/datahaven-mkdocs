@@ -481,6 +481,7 @@ a.md-social__link {
 /* --- Code blocks --- */
 .md-typeset pre > code {
   border-radius: var(--border-radius);
+  padding-right: 1.5rem;
 }
 
 .md-typeset .highlighttable a {
