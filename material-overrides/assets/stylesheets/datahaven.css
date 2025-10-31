@@ -607,11 +607,35 @@ a.md-social__link {
 }
 
 /* Clickable cards */
-.grid.cards > a {
+.grid.cards > ul > li > p:not(:last-child) a,
+.grid.cards > ul > li > a {
   text-decoration: none;
-  border: var(--border);
-  border-radius: var(--card-border-radius);
-  padding: 0.8rem;
+}
+
+.grid.cards > ul > li > p:not(:last-child) a:hover,
+.grid.cards > ul > li > a:hover {
+  color: var(--md-default-fg-color);
+}
+
+.grid.cards > ul > li:has(> p:not(:last-child) a),
+.grid.cards > ul > li:has(> a) {
+  display: flex;
+  gap: 0.5em;
+}
+
+.grid.cards > ul > li > p:first-child a {
+  width: 28px;
+  display: flex;
+}
+
+.grid.cards > ul > li > p:not(:last-child) a span.twemoji svg {
+  height: 24px;
+  width: 24px;
+  margin: 0.7em 0 0.5em;
+}
+
+.grid.cards > ul > li:has(> a:hover) span.twemoji svg {
+  transform: translateX(5px);
 }
 
 /* --- Admonition --- */
@@ -659,6 +683,44 @@ a.md-social__link {
 .md-typeset details.interface {
   border: var(--border);
   box-shadow: none;
+}
+
+/* Set interface styling for FAQ pages */
+
+.md-typeset details.faq.interface:has(~ details.interface),
+.md-typeset details.faq.interface ~ details.interface {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.md-typeset details.faq.interface > summary:after {
+  height: 100%;
+  top: 0;
+}
+
+.md-typeset details.faq.interface:open .headerlink {
+  opacity: 1;
+}
+
+.md-typeset details.faq.interface:not(:open) .headerlink {
+  opacity: 0;
+}
+
+/* Fix link anchor positioning for the h2s inside the FAQ admonitions */
+.md-typeset details.faq.interface > summary {
+  display: block;
+  position: relative;
+  overflow: visible;
+  padding: 0;
+  cursor: pointer;
+}
+
+.md-typeset details.faq.interface > summary h2 {
+  margin: 0 1em;
+  padding: 1em 1em 1em 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 /*** --- Headerlink --- ***/
