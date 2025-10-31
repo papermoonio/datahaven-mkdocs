@@ -621,6 +621,10 @@ a.md-social__link {
   margin: 0.7em 0 0.5em;
 }
 
+.grid.cards > ul > li:has(> a:hover) span.twemoji svg {
+  transform: translateX(5px);
+}
+
 /* --- Admonition --- */
 .md-typeset .admonition {
   border-width: var(--border-width);
