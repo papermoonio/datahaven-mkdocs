@@ -594,11 +594,35 @@ a.md-social__link {
 }
 
 /* Clickable cards */
-.grid.cards > a {
+.grid.cards > ul > li > p:not(:last-child) a,
+.grid.cards > ul > li > a {
   text-decoration: none;
-  border: var(--border);
-  border-radius: var(--card-border-radius);
-  padding: 0.8rem;
+}
+
+.grid.cards > ul > li > p:not(:last-child) a:hover,
+.grid.cards > ul > li > a:hover {
+  color: var(--md-default-fg-color);
+}
+
+.grid.cards > ul > li:has(> p:not(:last-child) a),
+.grid.cards > ul > li:has(> a) {
+  display: flex;
+  gap: 0.5em;
+}
+
+.grid.cards > ul > li > p:first-child a {
+  width: 28px;
+  display: flex;
+}
+
+.grid.cards > ul > li > p:not(:last-child) a span.twemoji svg {
+  height: 24px;
+  width: 24px;
+  margin: 0.7em 0 0.5em;
+}
+
+.grid.cards > ul > li:has(> a:hover) span.twemoji svg {
+  transform: translateX(5px);
 }
 
 /* --- Admonition --- */
