@@ -6,16 +6,16 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
 /* displays if timeline doesn't render properly 
 (bad file path to JSON, etc)*/
 [data-md-color-scheme="custom-light"] {
-  --gradient-before-color-1: rgba(48, 105, 97, 0.1) 0%;
-  --gradient-before-color-2: rgba(48, 105, 97, 1) 100%;
+  --gradient-before-color-1: rgba(110, 97, 81, 1) 0%;
+  --gradient-before-color-2: rgba(110, 97, 81, 1) 100%;
 
-  --gradient-after-color-1: var(--md-default-bg-color) 0%;
-  --gradient-after-color-2: var(--md-default-bg-color) 100%;
+  --gradient-after-color-1: rgba(110, 97, 81, 1) 0%;
+  --gradient-after-color-2: rgba(110, 97, 81, 0.1) 100%;
 }
 
 [data-md-color-scheme="custom-dark"] {
-  --gradient-before-color-1: rgba(48, 105, 97, 1) 0%;
-  --gradient-before-color-2: rgba(48, 105, 97, 1) 100%;
+  --gradient-before-color-1: rgba(110, 97, 81, 1) 0%;
+  --gradient-before-color-2: rgba(110, 97, 81, 1) 100%;
 
   --gradient-after-color-1: var(--md-default-bg-color) 0%;
   --gradient-after-color-2: var(--md-default-bg-color) 100%;
@@ -38,14 +38,14 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
   /* heading name for each item on timeline */
   
   .nt-timeline-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 0;
   }
 
   /** content blocks for each timeline item**/
   /** border between timeline items **/
   .nt-timeline-content {
-    border-bottom: 2px dashed var(--border-color);
+    border-bottom: 2px dashed var(--warm-brown-80);
     padding-bottom: 1.2rem;
   }
 
@@ -163,9 +163,11 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
         top: 0px;
 
         &.bigger {
+          display: flex;
+          align-items: center;
           top: 0px;
-          left: 10px;
-          background: var(--md-default-bg-color);
+          left: 14px;
+          background: var(--warm-brown);
         }
       }
     }
@@ -179,8 +181,7 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
 
   > div {
     min-height: 100px;
-    padding-top: 2px;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
   }
 }
 
@@ -212,7 +213,7 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
   align-items: center;
 
   /* border around each icon */
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--number-border);
 
   &:not(.bigger) {
     .icon {
@@ -221,15 +222,14 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
   }
 
   &.bigger {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     padding: 3px;
   }
 
   .icon {
-    color: var(--md-default-fg-color);
+    color: var(--cream);
     position: relative;
-    bottom: 1px;
   }
 }
 
@@ -265,4 +265,9 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
       font-size: 1rem !important;
     }
   }
+}
+
+.md-typeset .twemoji svg {
+  width: 18px;
+  height: 18px;
 }
