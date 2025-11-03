@@ -377,7 +377,7 @@
   }
 
   .md-nav__link {
-    padding: 0.2rem;
+    padding: 0.2rem 0.5rem;
     margin-top: 0.1rem;
   }
 }
@@ -385,6 +385,11 @@
 @media screen and (max-width: 76.2344em) {
   .md-nav--primary .md-nav__title[for="__drawer"] {
     background-color: var(--md-default-fg-color--lightest);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .md-nav--primary .md-nav__title {
+    border-bottom: 1px solid var(--border-color);
   }
 
   .md-nav--primary .md-nav__item--active > .md-nav__link,
@@ -419,7 +424,7 @@
 
   .md-nav--secondary .md-nav__title {
     box-shadow: none;
-    padding: 0.2rem 0;
+    padding: 0.2rem 0.3rem;
     margin-left: 0.8rem;
     margin-bottom: 0.5em;
     font-size: 0.9em;
@@ -427,7 +432,7 @@
   }
 
   .md-sidebar--secondary .md-nav__link {
-    padding: 0.2rem;
+    padding: 0.2rem 0.5rem;
     margin-top: 0.1rem;
   }
 
@@ -442,6 +447,10 @@
 .md-footer {
   border-top: var(--border);
   border-bottom: var(--border);
+}
+
+html .md-footer-meta.md-typeset a {
+  text-decoration: none;
 }
 
 .legal,
@@ -481,6 +490,7 @@ a.md-social__link {
 /* --- Code blocks --- */
 .md-typeset pre > code {
   border-radius: var(--border-radius);
+  padding-right: 1.5rem;
 }
 
 .md-typeset .highlighttable a {
@@ -502,6 +512,10 @@ a.md-social__link {
 }
 
 /* --- Tables --- */
+.md-typeset__table {
+  width: 100%;
+}
+
 .md-typeset table:not([class]) {
   border-radius: var(--border-radius);
   border: var(--border);
@@ -524,7 +538,7 @@ a.md-social__link {
 }
 
 .md-typeset table:not([class]) td {
-  padding: .9375em 2em;
+  padding: 0.9375em 2em;
 }
 
 /* --- Tabs --- */
@@ -590,7 +604,6 @@ a.md-social__link {
 .md-typeset .grid > .card:hover {
   box-shadow: none;
   border-color: var(--border-color);
-  cursor: pointer;
 }
 
 /* Clickable cards */
