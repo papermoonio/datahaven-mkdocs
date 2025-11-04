@@ -511,6 +511,10 @@ a.md-social__link {
   border-top-right-radius: 0;
 }
 
+.md-typeset .break-spaces > pre > code {
+  white-space: break-spaces;
+}
+
 /* --- Tables --- */
 .md-typeset__table {
   width: 100%;
