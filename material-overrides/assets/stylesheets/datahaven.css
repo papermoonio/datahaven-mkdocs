@@ -343,7 +343,8 @@
 
 .md-nav__link--active,
 .md-nav__link[for]:hover,
-.md-nav__link[href]:hover {
+.md-nav__link[href]:hover,
+.md-nav__link.md-nav__link--active:focus {
   color: var(--cream);
   background: var(--warm-brown);
   border-radius: var(--border-radius);
