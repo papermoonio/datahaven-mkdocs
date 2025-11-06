@@ -244,6 +244,18 @@
   opacity: 1;
 }
 
+.beta-label {
+  display: flex;
+  align-self: center;
+  margin-top: 0.4rem;
+  height: 100%;
+  font-size: 0.7rem;
+  background: var(--light-green);
+  color: var(--dark);
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--border-radius);
+}
+
 .md-header__button.md-icon {
   background-color: var(--secondary-bg-color);
   border: var(--border);
@@ -272,6 +284,12 @@
 .md-search-result__more > summary:focus > div,
 .md-search-result__more > summary:hover > div {
   background-color: var(--md-typeset-table-color--light);
+}
+
+@media screen and (max-width: 76.2344em) {
+  .md-header__inner > .beta-label {
+    display: none;
+  };
 }
 
 @media screen and (min-width: 60em) {
@@ -413,6 +431,14 @@
 
   .md-nav__link .nav-home .twemoji {
     display: none;
+  }
+
+  .md-nav__title > .beta-label {
+    height: fit-content;
+    width: fit-content;
+    line-height: normal;
+    font-size: 0.7rem;
+    font-weight: 400;
   }
 }
 
