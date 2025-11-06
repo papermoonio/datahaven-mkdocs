@@ -38,15 +38,18 @@ Neoteroi Mkdocs timeline extension: https://github.com/Neoteroi/mkdocs-plugins/b
   /* heading name for each item on timeline */
   
   .nt-timeline-title {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   /** content blocks for each timeline item**/
   /** border between timeline items **/
   .nt-timeline-content {
-    border-bottom: 2px dashed var(--warm-brown-80);
-    padding-bottom: 1.2rem;
+    padding: 0.5rem 0 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &.horizontal {
