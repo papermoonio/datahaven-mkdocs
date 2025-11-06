@@ -67,7 +67,8 @@
 
   --md-code-bg-color: var(--white);
   --md-code-fg-color: var(--forest-green);
-  --md-code-hl-comment-color: var(--warm-brown-80); /* Comments */
+  /* Comments */
+  --md-code-hl-comment-color: var(--warm-brown-80);
 
   --md-admonition-fg-color: var(--dark);
   --md-admonition-bg-color: var(--light);
@@ -108,20 +109,26 @@
 
   --md-code-bg-color: var(--black);
   --md-code-fg-color: var(--cream);
-  --md-code-hl-number-color: var(--light-green); /* Numbers */
-  --md-code-hl-function-color: var(--sky-blue); /* Python function names */
-  --md-code-hl-name-color: var(
-    --cream
-  ); /* JavaScript booleans, Python variable names */
-  --md-code-hl-string-color: var(--peach); /* Strings */
-  --md-code-hl-constant-color: var(--sky-blue); /* Python print */
-  --md-code-hl-keyword-color: var(
-    --sky-blue
-  ); /* Imports, const, let, var, async, await, function, etc. */
-  --md-code-hl-comment-color: var(--cream-50); /* Comments */
-  --md-code-hl-punctuation-color: var(--cream); /* Punctuation */
-  --md-code-hl-operator-color: var(--cream); /* Operators */
-  --md-code-hl-variable-color: var(--peach); /* Variables */
+  /* Numbers */
+  --md-code-hl-number-color: var(--light-green);
+  /* Python function names */
+  --md-code-hl-function-color: var(--sky-blue);
+  /* JavaScript booleans, Python variable names */
+  --md-code-hl-name-color: var(--cream);
+  /* Strings */
+  --md-code-hl-string-color: var(--peach);
+  /* Python print */
+  --md-code-hl-constant-color: var(--sky-blue);
+  /* Imports, const, let, var, async, await, function, etc. */
+  --md-code-hl-keyword-color: var(--sky-blue);
+  /* Comments */
+  --md-code-hl-comment-color: var(--cream-50);
+  /* Punctuation */
+  --md-code-hl-punctuation-color: var(--cream);
+  /* Operators */
+  --md-code-hl-operator-color: var(--cream);
+  /* Variables */
+  --md-code-hl-variable-color: var(--peach);
 
   --md-admonition-fg-color: var(--light);
   --md-admonition-bg-color: var(--dark);
@@ -161,7 +168,8 @@
 
 [data-md-color-scheme="custom-light"] img[src$="#only-dark"],
 [data-md-color-scheme="custom-dark"] img[src$="#only-light"] {
-  display: none !important; /* Hide dark images in light mode and vice versa */
+  /* Hide dark images in light mode and vice versa */
+  display: none !important;
 }
 
 .md-icon svg {
@@ -283,9 +291,8 @@
 
   .md-search__form,
   [dir="ltr"] .md-search-result__meta {
-    height: calc(
-      1.2rem + 0.4rem + 0.4rem + 2px
-    ); /* Same size as palette icon + padding top + padding bottom + border width */
+    /* Same size as palette icon + padding top + padding bottom + border width */
+    height: calc(1.2rem + 0.4rem + 0.4rem + 2px);
   }
 
   [data-md-toggle="search"]:checked
