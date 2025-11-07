@@ -245,10 +245,7 @@
 }
 
 .beta-label {
-  display: flex;
-  align-self: center;
   margin-top: 0.4rem;
-  height: 100%;
   font-size: 0.7rem;
   background: var(--light-green);
   color: var(--dark);
@@ -434,7 +431,6 @@
   }
 
   .md-nav__title > .beta-label {
-    height: fit-content;
     width: fit-content;
     line-height: normal;
     font-size: 0.7rem;
