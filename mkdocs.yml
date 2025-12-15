@@ -111,9 +111,9 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/@DataHavenxyz
       name: YouTube    
-    # - icon: fontawesome/brands/github
-    #   link: https://github.com/XXX
-    #   name: GitHub
+    - icon: fontawesome/brands/github
+      link: https://github.com/datahaven-xyz/datahaven
+      name: GitHub
   # analytics:
   #   provider: google
   #   property: G-XXX
