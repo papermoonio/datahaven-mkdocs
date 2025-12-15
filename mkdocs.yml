@@ -112,7 +112,7 @@ extra:
       link: https://www.youtube.com/@DataHavenxyz
       name: YouTube    
     - icon: fontawesome/brands/github
-      link: https://github.com/datahaven-xyz
+      link: https://github.com/datahaven-xyz/datahaven
       name: GitHub
   # analytics:
   #   provider: google
