@@ -3,6 +3,10 @@
     {
       "key": "/store-and-retrieve-data/starter-kit/",
       "value": "/store-and-retrieve-data/network-details/testnet/"
+    },
+    {
+      "key": "/store-and-retrieve-data/use-the-wayne-dapp/",
+      "value": "/store-and-retrieve-data/use-the-datahaven-dapp/"
     }
   ]
 }
