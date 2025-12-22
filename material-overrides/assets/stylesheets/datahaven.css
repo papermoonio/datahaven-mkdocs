@@ -772,14 +772,22 @@ a.md-social__link {
 }
 
 /*** --- Clipboard --- ***/
-.md-clipboard {
+.md-code__button {
   color: var(--md-default-fg-color);
   opacity: 0.5;
 }
 
-.md-clipboard:focus,
-.md-clipboard:hover {
+.md-code__button:focus,
+.md-code__button:hover {
   opacity: 1;
+}
+
+.md-code__nav {
+  background-color: transparent;
+}
+
+pre:hover > .md-code__nav {
+  background: transparent;
 }
 
 .md-dialog {
