@@ -4,7 +4,7 @@ site_url: https://docs.datahaven.xyz/ # The URL where your docs will be hosted
 home_url: https://datahaven.xyz/ # The URL for the home button in the top left
 site_dir: /var/www/datahaven-docs-static
 docs_dir: datahaven-docs
-copyright: © 2025 DataHaven. All Rights Reserved.
+copyright: © 2026 DataHaven. All Rights Reserved.
 exclude_docs: |
    README.md
    LICENSE.md
