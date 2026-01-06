@@ -172,6 +172,11 @@
   display: none !important;
 }
 
+.md-content__inner.md-typeset img {
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
 .md-icon svg {
   fill: var(--md-default-fg-color);
 }
