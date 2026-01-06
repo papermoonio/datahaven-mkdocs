@@ -26,6 +26,10 @@
   flex-wrap: wrap;
 }
 
+.md-content__inner.md-typeset img {
+  border: none;
+}
+
 @media screen and (max-width: 86.2344em) {
   .md-content__inner {
     max-width: 100%;
