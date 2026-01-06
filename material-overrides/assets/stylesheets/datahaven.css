@@ -650,12 +650,11 @@ a.md-social__link {
 .grid.cards > ul > li > p:not(:last-child) a,
 .grid.cards > ul > li > a {
   text-decoration: none;
-  background-color: transparent;
 }
 
 .grid.cards > ul > li > p:not(:last-child) a:hover,
-.grid.cards > ul > li > :has(a:hover) {
-  background-color: var(--plum);
+.grid.cards > ul > li > a:hover {
+  color: var(--md-default-fg-color);
 }
 
 .grid.cards > ul > li:has(> p:not(:last-child) a),
