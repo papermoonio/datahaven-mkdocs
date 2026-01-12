@@ -91,6 +91,11 @@
       {% include "partials/alternate.html" %}
     {% endif %}
 
+    <!-- Network Connect Button -->
+    <a href="#" class="md-header__button md-button connectMetaMask-nav md-typeset">
+        Connect Wallet
+    </a>
+
     <!-- Button to open search modal -->
     {% if "material/search" in config.plugins %}
       {% set search = config.plugins["material/search"] | attr("config") %}
