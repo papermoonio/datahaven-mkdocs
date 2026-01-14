@@ -708,13 +708,13 @@ a.md-social__link {
 }
 
 /* Interface admonitions */
-.md-typeset .interface .admonition-title:before,
+.md-typeset .interface > .admonition-title:before,
 .md-typeset .interface > summary:before {
   display: none;
 }
 
 [dir="ltr"] .md-typeset details.interface > summary,
-.md-typeset .interface .admonition-title {
+.md-typeset .interface > .admonition-title {
   background-color: var(--warm-brown-20);
   padding-left: 1em;
 }
@@ -726,7 +726,6 @@ a.md-social__link {
 }
 
 /* Set interface styling for FAQ pages */
-
 .md-typeset details.faq.interface:has(~ details.interface),
 .md-typeset details.faq.interface ~ details.interface {
   margin-top: 1em;
