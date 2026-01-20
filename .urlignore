@@ -5,3 +5,6 @@ localhost
 # Ignore Google Fonts service
 https://fonts.gstatic.com/
 https://fonts.googleapis.com/
+
+# 405 Method not Allowed
+https://apps.datahaven.xyz/
