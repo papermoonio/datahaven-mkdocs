@@ -1,0 +1,54 @@
+{
+    "schema_version": "1.2",
+
+    "project": {
+        "id": "datahaven",
+        "name": "DataHaven",
+        "project_url": "https://datahaven.xyz/",
+        "docs_base_url": "https://docs.datahaven.xyz/"
+    },
+
+    "repository": {
+        "host": "github",
+        "org": "datahaven-xyz",
+        "repo": "datahaven-docs",
+        "default_branch": "main",
+        "docs_path": ".",
+        "ai_artifacts_path": "ai/pages"
+    },
+
+    "content": {
+        "docs_dir": ".",
+        "base_context_categories": ["Basics", "Reference"],
+        "categories_order": [
+            "Basics",
+            "Protocol", 
+            "Network", 
+            "Storage Providers", 
+            "BSP", 
+            "MSP", 
+            "FAQs", 
+            "Troubleshooting", 
+            "StorageHub SDK",
+            "Store Data",
+            "Reference"
+        ],
+        "exclusions": {
+            "skip_basenames": [
+                "index.md",
+                "README.md",
+                ".CONTRIBUTING.md",
+                "LICENSE.md"
+            ],
+            "skip_paths": [".snippets", ".github"]
+        }
+    },
+
+    "outputs": {
+        "public_root": "/ai/",
+        "files": {
+            "llms_full": "llms-full.jsonl",
+            "pages_dir": "pages"
+        }
+    }
+}
