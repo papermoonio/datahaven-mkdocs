@@ -101,6 +101,7 @@ validation:
 
 # Extra configuration
 extra:
+  homepage: https://datahaven.xyz/
   generator: False
   social:
     - icon: fontawesome/brands/discord
