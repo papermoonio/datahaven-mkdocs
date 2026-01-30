@@ -1,3 +1,4 @@
 User-agent: * 
 
 Sitemap: https://docs.datahaven.xyz/sitemap.xml
+Disallow: /ai/
