@@ -599,6 +599,11 @@ a.md-social__link {
   padding: 0.9375em 2em;
 }
 
+.actions {
+  display: flex;
+  gap: 4px;
+}
+
 /* --- Tabs --- */
 .md-typeset .tabbed-labels {
   box-shadow: none;
