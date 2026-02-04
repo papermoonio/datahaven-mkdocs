@@ -91,7 +91,7 @@
   width: 1em;
   height: 1em;
   transition: transform 0.2s;
-  fill: var(--cream);
+  fill: var(--md-default-fg-color);
 }
 
 /* Color of chevron while left button is hovered */
@@ -158,7 +158,7 @@
   width: 1em;
   height: 1em;
   flex-shrink: 0;
-  fill: var(--cream);
+  fill: var(--md-default-fg-color);
 }
 
 .copy-to-llm-dropdown-item:hover svg {
@@ -185,8 +185,8 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%) translateY(100px);
-  background-color: var(--md-primary-bg-color);
-  color: var(--md-primary-fg-color);
+  background-color: var(--md-default-fg-color);
+  color: var(--md-default-bg-color);
   padding: 0.75rem 1.5rem;
   border-radius: var(--border-radius);
   font-size: 0.875rem;
