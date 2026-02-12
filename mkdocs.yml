@@ -97,6 +97,7 @@ plugins:
   - macros:
       include_yaml:
         - datahaven-docs/variables.yml
+  - page_toggle
 
 # Build validation settings
 validation:
