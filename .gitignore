@@ -2,3 +2,6 @@ datahaven-docs*
 venv
 .DS_Store
 venv-test
+
+# MkDocs social cards
+.cache/
