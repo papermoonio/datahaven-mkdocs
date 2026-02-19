@@ -1,0 +1,73 @@
+/* Container layout */
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Panel layout */
+.toggle-panel,
+.toggle-header > span,
+.toggle-header > span .h1-copy-wrapper {
+  display: none;
+}
+
+.toggle-panel.active,
+.toggle-header > span.active {
+  display: block;
+}
+
+.toggle-header > span.active .h1-copy-wrapper {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+/* Button container */
+.toggle-buttons {
+  display: inline-flex;
+  position: relative;
+  background: var(--md-default-bg-color);
+  border-radius: 9999px;
+  padding: 4px;
+  border: 1px solid var(--border-color);
+  width: fit-content;
+}
+
+/* Buttons */
+.toggle-btn {
+  z-index: 2;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+  color: var(--md-typeset-color);
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+/* Active text color */
+.toggle-btn.active {
+  color: var(--secondary-fg-color);
+}
+
+/* Slider background */
+.toggle-slider {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  background: var(--secondary-bg-color);
+  border-radius: 9999px;
+  z-index: 1;
+  transition: all 0.25s ease;
+}
+
+/* --- Required if using the per-page LLMs dropdown --- */
+/* Update the copy-to-llm container margin when used alongside page-level toggle */
+@media screen and (max-width: 768px) {
+  .copy-to-llm-split-container {
+    margin-top: 0;
+  }
+
+  .toggle-buttons {
+    margin-top: 0.2rem;
+  }
+}
