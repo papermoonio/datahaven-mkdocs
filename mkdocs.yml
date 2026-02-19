@@ -10,6 +10,7 @@ extra_javascript:
   - js/errorModal.js
   - js/networkModal.js
   - js/copy-to-llms.js
+  - js/toggle-pages.js
 exclude_docs: |
    README.md
    LICENSE.md
@@ -20,6 +21,7 @@ extra_css:
   - assets/stylesheets/terminal.css
   - assets/stylesheets/timeline-neotori.css
   - assets/stylesheets/copy-to-llm.css
+  - assets/stylesheets/toggle-pages.css
 
 # Theme configuration
 theme:
