@@ -100,6 +100,15 @@ plugins:
       include_yaml:
         - datahaven-docs/variables.yml
   - page_toggle
+  - social:
+      enabled: !ENV [SOCIAL_CARDS, True]
+      cards_layout_dir: layouts
+      cards_layout: datahaven
+      cards_layout_options:
+        background_image: layouts/DH-bg.webp
+        background_color: transparent
+        logo: null
+        title: DataHaven Documentation & Resources
 
 # Build validation settings
 validation:
