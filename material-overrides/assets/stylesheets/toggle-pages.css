@@ -25,10 +25,9 @@
 .toggle-buttons {
   display: inline-flex;
   position: relative;
-  background: var(--md-default-bg-color);
+  background: var(--border-color);
   border-radius: 9999px;
   padding: 4px;
-  border: 1px solid var(--border-color);
   width: fit-content;
 }
 
@@ -38,7 +37,7 @@
   padding: 4px 12px;
   border-radius: 9999px;
   font-weight: 500;
-  color: var(--md-typeset-color);
+  color: var(--white);
   cursor: pointer;
   transition: color 0.25s ease;
 }
