@@ -207,6 +207,10 @@
     padding-right: 2em;
   }
 
+  .md-content > .md-path {
+    margin-left: 4rem;
+  }
+
   [dir="ltr"] .md-nav--primary .md-nav__list {
     padding-right: 0.6rem;
   }
