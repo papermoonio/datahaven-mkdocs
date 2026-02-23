@@ -33,6 +33,7 @@ theme:
   features:
     - navigation.sections # Render top-level sections as groups in the sidebar
     - content.code.copy
+    - navigation.path
   icon:
     admonition:
       code: material/code-not-equal-variant
