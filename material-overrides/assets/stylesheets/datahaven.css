@@ -181,6 +181,15 @@
   fill: var(--md-default-fg-color);
 }
 
+/* --- Breadcrumbs styling --- */
+.md-path__item:not(:first-child):before {
+  background-color: var(--md-default-fg-color--light);
+}
+
+.md-path__link:hover {
+  color: var(--warm-brown);
+}
+
 /* --- Layout styling --- */
 .md-grid {
   max-width: 80rem;
