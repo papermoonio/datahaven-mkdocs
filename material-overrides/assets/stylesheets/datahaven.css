@@ -181,6 +181,15 @@
   fill: var(--md-default-fg-color);
 }
 
+/* --- Breadcrumbs styling --- */
+.md-path__item:not(:first-child):before {
+  background-color: var(--md-default-fg-color--light);
+}
+
+.md-path__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
 /* --- Layout styling --- */
 .md-grid {
   max-width: 80rem;
@@ -196,6 +205,10 @@
   .md-content {
     border-left: var(--border);
     padding-right: 2em;
+  }
+
+  .md-content > .md-path {
+    margin-left: 4rem;
   }
 
   [dir="ltr"] .md-nav--primary .md-nav__list {
