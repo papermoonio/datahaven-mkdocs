@@ -19,27 +19,71 @@
 
     "content": {
         "docs_dir": ".",
-        "base_context_categories": ["Basics", "Reference"],
-        "categories_order": [
-            "Basics",
-            "Protocol", 
-            "Network", 
-            "Storage Providers", 
-            "BSP", 
-            "MSP", 
-            "FAQ", 
-            "Troubleshooting", 
-            "StorageHub SDK",
-            "Store Data",
-            "Reference"
-        ],
+        "base_context_categories": ["basics", "reference"],
+        "categories_info": {
+                "basics": {
+                    "id": "basics",
+                    "name": "Basics",
+                    "description": "A DataHaven general knowledge base to provide context around overview and beginner level content."
+                },
+                "protocol": {
+                    "id": "protocol",
+                    "name": "Protocol",
+                    "description": "Information about the DataHaven protocol, including interoperability, restaking, and the data provider model."
+                },
+                "network": {
+                    "id": "network",
+                    "name": "Network",
+                    "description": "Information about the DataHaven network, including local devnet and testnet configuration."
+                },
+                "storage_providers": {
+                    "id": "storage_providers",
+                    "name": "Storage Providers",
+                    "description": "Information relevant to storage providers in the DataHaven ecosystem, including roles and hardware requirements."
+                },
+                "bsp": {
+                    "id": "bsp",
+                    "name": "BSP",
+                    "description": "Information specific to the Backup Storage Provider (BSP) role in DataHaven, including onboarding and troubleshooting."
+                },
+                "msp": {
+                    "id": "msp",
+                    "name": "MSP",
+                    "description": "Information specific to the Main Storage Provider (MSP) role in the DataHaven protocol."
+                },
+                "faq": {
+                    "id": "faq",
+                    "name": "FAQ",
+                    "description": "Frequently Asked Questions about DataHaven."
+                },
+                "troubleshooting": {
+                    "id": "troubleshooting",
+                    "name": "Troubleshooting",
+                    "description": "Common issues and their solutions for DataHaven users."
+                },
+                "storagehub_sdk": {
+                    "id": "storagehub_sdk",
+                    "name": "StorageHub SDK",
+                    "description": "Documentation for the StorageHub SDK, including installation and usage guides."
+                },
+                "store_data": {
+                    "id": "store_data",
+                    "name": "Store Data",
+                    "description": "Guides and best practices for storing data on the DataHaven network."
+                },
+                "reference": {
+                    "id": "reference",
+                    "name": "Reference",
+                    "description": "Comprehensive reference materials for DataHaven."
+                }
+            },
         "exclusions": {
             "skip_basenames": [
                 "README.md",
-                ".CONTRIBUTING.md",
+                "ai-resources.md",
                 "LICENSE.md"
             ],
-            "skip_paths": [".snippets", ".github"]
+            "skip_paths": ["venv"]
         }
     },
 
