@@ -23,6 +23,13 @@
         </span>
        {{ ref.title }}
     </span>
+    {% elif ref.title == "AI Resources" %}
+      <span class="nav-home">
+        <span class="twemoji">
+            {% include ".icons/octicons/ai-model-16.svg" %} 
+        </span>
+       {{ ref.title }}
+      </span>
     {% else %}
       {{ ref.title }}
     {% endif %}

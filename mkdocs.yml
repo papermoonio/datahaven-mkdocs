@@ -9,7 +9,7 @@ extra_javascript:
   - js/connectMetaMask.js
   - js/errorModal.js
   - js/networkModal.js
-  - js/copy-to-llms.js
+  - js/ai-file-actions.js
   - js/toggle-pages.js
 exclude_docs: |
    README.md
@@ -20,7 +20,7 @@ extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/terminal.css
   - assets/stylesheets/timeline-neotori.css
-  - assets/stylesheets/copy-to-llm.css
+  - assets/stylesheets/ai-file-actions.css
   - assets/stylesheets/toggle-pages.css
 
 # Theme configuration
@@ -89,6 +89,8 @@ markdown_extensions:
 plugins:
   - search
   - awesome-nav
+  - ai_resources_page
+  - ai_page_actions
   - resolve_md:
       llms_config: llms_config.json
   - git-revision-date-localized:
