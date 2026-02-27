@@ -1,0 +1,282 @@
+{
+    "schema_version": "0.1",
+
+    "project": {
+        "id": "datahaven",
+        "name": "DataHaven",
+        "docs_base_url": "https://docs.datahaven.xyz/"
+    },
+
+    "reference_repos": {
+        "dh-test": {
+            "url": "https://github.com/aljosamakevic/dh-test",
+            "default_branch": "main",
+            "raw_base_url": "https://raw.githubusercontent.com/aljosamakevic/dh-test/main",
+            "description": "Working TypeScript examples for the StorageHub SDK covering bucket creation, file upload, retrieval, and lifecycle management on DataHaven testnet."
+        }
+    },
+
+    "tasks": [
+        {
+            "id": "end-to-end-storage-workflow",
+            "title": "End-to-End Storage Workflow",
+            "objective": "Set up a TypeScript project, install the StorageHub SDK, create a bucket, upload a file, and retrieve it from the DataHaven testnet.",
+
+            "prerequisites": {
+                "runtime": [
+                    "Node.js v22 or later (LTS recommended)",
+                    "pnpm, npm, or yarn for package management",
+                    "TypeScript 5.x with tsx for direct .ts execution"
+                ],
+                "network": [
+                    "Internet access to reach DataHaven testnet RPC (https://services.datahaven-testnet.network/testnet)",
+                    "Internet access to reach DataHaven testnet WSS (wss://services.datahaven-testnet.network/testnet)",
+                    "Internet access to reach MSP backend (https://deo-dh-backend.testnet.datahaven-infra.network/)"
+                ],
+                "tokens": [
+                    "MOCK testnet tokens from the faucet at https://apps.datahaven.xyz/testnet/faucet (500 MOCK dispensed per 24 hours)"
+                ]
+            },
+
+            "env_vars": [
+                {
+                    "name": "PRIVATE_KEY",
+                    "description": "EVM private key (hex, 0x-prefixed) for signing transactions. Must correspond to a testnet account funded with MOCK tokens.",
+                    "required": true
+                }
+            ],
+
+            "steps": [
+                {
+                    "order": 1,
+                    "action": "Create the project directory and initialize it",
+                    "commands": [
+                        "mkdir datahaven-project && cd datahaven-project",
+                        "pnpm init",
+                        "pnpm add -D typescript tsx ts-node @types/node"
+                    ]
+                },
+                {
+                    "order": 2,
+                    "action": "Create tsconfig.json",
+                    "description": "Configure TypeScript for ES2022, NodeNext module resolution, and strict mode. The include path should cover src/**/*.ts.",
+                    "commands": [
+                        "cat > tsconfig.json << 'EOF'\n{\n    \"compilerOptions\": {\n        \"target\": \"ES2022\",\n        \"module\": \"NodeNext\",\n        \"moduleResolution\": \"NodeNext\",\n        \"esModuleInterop\": true,\n        \"strict\": true,\n        \"resolveJsonModule\": true,\n        \"skipLibCheck\": true,\n        \"outDir\": \"dist\",\n        \"declaration\": true,\n        \"sourceMap\": true\n    },\n    \"include\": [\"src/**/*.ts\"]\n}\nEOF"
+                    ]
+                },
+                {
+                    "order": 3,
+                    "action": "Create the project directory structure",
+                    "commands": [
+                        "mkdir -p src/config src/services src/operations src/files"
+                    ]
+                },
+                {
+                    "order": 4,
+                    "action": "Install the StorageHub SDK packages",
+                    "commands": [
+                        "pnpm add @storagehub-sdk/core @storagehub-sdk/msp-client"
+                    ]
+                },
+                {
+                    "order": 5,
+                    "action": "Install client dependencies",
+                    "commands": [
+                        "pnpm add @storagehub/types-bundle @polkadot/api @polkadot/types @polkadot/util-crypto @storagehub/api-augment viem dotenv"
+                    ]
+                },
+                {
+                    "order": 6,
+                    "action": "Create the .env file with your private key",
+                    "description": "Create a .env file in the project root containing PRIVATE_KEY=0x<your-hex-key>. This key must belong to a testnet account funded with MOCK tokens.",
+                    "commands": [
+                        "echo 'PRIVATE_KEY=0x_INSERT_YOUR_PRIVATE_KEY_HERE' > .env"
+                    ]
+                },
+                {
+                    "order": 7,
+                    "action": "Create the network configuration file",
+                    "reference_file": "config/networks.ts"
+                },
+                {
+                    "order": 8,
+                    "action": "Create the client service",
+                    "description": "Initializes EVM account, wallet client, public client, StorageHubClient, Polkadot API, and signer. All other modules import shared clients from here.",
+                    "reference_file": "services/clientService.ts"
+                },
+                {
+                    "order": 9,
+                    "action": "Create the MSP service",
+                    "description": "Configures the MspClient HTTP client for the MSP backend. Provides helpers for health checks, authentication, MSP info, and value proposition fetching.",
+                    "reference_file": "services/mspService.ts"
+                },
+                {
+                    "order": 10,
+                    "action": "Create the bucket operations module",
+                    "description": "Contains createBucket, verifyBucketCreation, and waitForBackendBucketReady. Handles the full bucket lifecycle from derivation through on-chain verification and backend indexing.",
+                    "reference_file": "operations/bucketOperations.ts"
+                },
+                {
+                    "order": 11,
+                    "action": "Create the file operations module",
+                    "description": "Contains uploadFile, waitForMSPConfirmOnChain, waitForBackendFileReady, downloadFile, and verifyDownload. Handles the full file lifecycle from storage request through upload, download, and integrity verification.",
+                    "reference_file": "operations/fileOperations.ts"
+                },
+                {
+                    "order": 12,
+                    "action": "Create a sample file to upload",
+                    "description": "Place a small text file in the files directory. The reference repo uses a file called helloworld.txt. Any file up to 5 MB is accepted on testnet.",
+                    "reference_file": "files/helloworld.txt"
+                },
+                {
+                    "order": 13,
+                    "action": "Create the end-to-end entry point script",
+                    "description": "The main script that orchestrates all steps in sequence: init WASM, check MSP health, create bucket, verify bucket on-chain, wait for backend indexing, upload file, wait for MSP confirmation, wait for backend file ready, download file, and verify integrity.",
+                    "reference_file": "end-to-end.ts"
+                },
+                {
+                    "order": 14,
+                    "action": "Run the end-to-end script",
+                    "commands": [
+                        "npx tsx src/index.ts"
+                    ],
+                    "expected_output": "The script creates a bucket, uploads helloworld.txt, waits for on-chain and backend confirmation, downloads the file, and verifies byte-for-byte integrity. Final output includes 'File verified successfully' or equivalent confirmation that the downloaded file matches the original."
+                }
+            ],
+
+            "reference_code": {
+                "repo": "dh-test",
+                "base_path": "node/scripts",
+                "files": [
+                    {
+                        "path": "config/networks.ts",
+                        "description": "Network configuration with RPC, WSS, MSP URLs, chain ID, and filesystem contract address for testnet and devnet."
+                    },
+                    {
+                        "path": "services/clientService.ts",
+                        "description": "Initializes shared EVM and Substrate clients: account, walletClient, publicClient, storageHubClient, polkadotApi, and signer."
+                    },
+                    {
+                        "path": "services/mspService.ts",
+                        "description": "MSP HTTP client setup with SIWE authentication, health checks, MSP info retrieval, value proposition fetching, and payment stream queries."
+                    },
+                    {
+                        "path": "operations/bucketOperations.ts",
+                        "description": "Bucket lifecycle operations: create bucket, verify on-chain, poll backend for indexing, and delete bucket."
+                    },
+                    {
+                        "path": "operations/fileOperations.ts",
+                        "description": "File lifecycle operations: upload (fingerprint, storage request, MSP upload), download (stream to disk), verify integrity, and poll for on-chain/backend confirmation."
+                    },
+                    {
+                        "path": "files/helloworld.txt",
+                        "description": "Sample text file used as the upload payload in the end-to-end demo."
+                    },
+                    {
+                        "path": "end-to-end.ts",
+                        "description": "Main entry point script that orchestrates the full create-bucket, upload-file, download-file pipeline."
+                    }
+                ]
+            },
+
+            "error_patterns": [
+                {
+                    "pattern": "Bucket already exists",
+                    "cause": "A bucket with the same name has already been created by this account. Bucket IDs are derived deterministically from the wallet address and bucket name.",
+                    "resolution": "Use a different bucket name, or modify the script logic to reuse the existing bucket ID for subsequent steps."
+                },
+                {
+                    "pattern": "MSP backend cannot resolve bucket ID / 404 on upload",
+                    "cause": "The bucket was just created on-chain but the MSP indexer has not processed the block yet. There is a race condition between on-chain creation and backend indexing.",
+                    "resolution": "Use the waitForBackendBucketReady polling helper before attempting to upload. It retries up to 10 times with a 2-second delay."
+                },
+                {
+                    "pattern": "File not found / 404 on download",
+                    "cause": "The file upload was confirmed on-chain but the MSP backend has not finished indexing or BSP replication is still in progress.",
+                    "resolution": "Use waitForMSPConfirmOnChain followed by waitForBackendFileReady before attempting to download. The backend polling allows up to ~12 minutes for BSP replication."
+                },
+                {
+                    "pattern": "Insufficient balance / transaction reverted",
+                    "cause": "The account does not have enough MOCK tokens to pay for the storage request transaction fees.",
+                    "resolution": "Request MOCK tokens from the testnet faucet at https://apps.datahaven.xyz/testnet/faucet (500 MOCK per 24 hours). Verify balance before running the script."
+                },
+                {
+                    "pattern": "WASM initialization error / initWasm() failure",
+                    "cause": "The @storagehub-sdk/core package requires WASM initialization before any SDK function calls. initWasm() was either not called or was called after other SDK operations.",
+                    "resolution": "Ensure initWasm() is the first SDK call in your script, before any other @storagehub-sdk/core operations."
+                },
+                {
+                    "pattern": "Connection refused on WSS or RPC endpoint",
+                    "cause": "The network configuration points to an unreachable endpoint, or the testnet is temporarily down.",
+                    "resolution": "Verify the RPC URL (https://services.datahaven-testnet.network/testnet) and WSS URL (wss://services.datahaven-testnet.network/testnet) are correct in networks.ts. Check DataHaven Discord for testnet status updates."
+                },
+                {
+                    "pattern": "getProfile() returns 'user.eth' as ENS",
+                    "cause": "Known SDK issue (v0.3.1) — the auth.getProfile() method returns a hardcoded placeholder for the ENS field.",
+                    "resolution": "This is a known issue. The correct address is still returned; the ENS field can be safely ignored."
+                },
+                {
+                    "pattern": "getBucket() returns fileCount: 0 and sizeBytes: 0",
+                    "cause": "Known SDK issue (v0.3.1) — the getBucket method returns hardcoded placeholder values for file count and size.",
+                    "resolution": "This is a known issue. The bucket exists and functions correctly; these metadata fields are placeholders."
+                }
+            ],
+
+            "supplementary_context": {
+                "description": "These resolved documentation pages provide deeper conceptual explanations. Use them if you need to understand why a step works, not how to execute it. The primary execution path is defined by the steps and reference code above.",
+                "pages": [
+                    {
+                        "slug": "get-started-with-the-storagehub-sdk",
+                        "url": "https://docs.datahaven.xyz/ai/pages/get-started-with-the-storagehub-sdk.md",
+                        "relevance": "Explains the SDK package architecture, client setup rationale, and when to use StorageHubClient vs polkadotApi vs walletClient."
+                    },
+                    {
+                        "slug": "end-to-end-storage-workflow-via-sdk",
+                        "url": "https://docs.datahaven.xyz/ai/pages/end-to-end-storage-workflow-via-sdk.md",
+                        "relevance": "The full tutorial walkthrough with step-by-step explanations of each phase: bucket creation, upload, download, and verification."
+                    },
+                    {
+                        "slug": "testnet",
+                        "url": "https://docs.datahaven.xyz/ai/pages/testnet.md",
+                        "relevance": "Network configuration details, block explorers, faucet information, and MSP endpoint URL needed for setup."
+                    },
+                    {
+                        "slug": "create-a-bucket-via-sdk",
+                        "url": "https://docs.datahaven.xyz/ai/pages/create-a-bucket-via-sdk.md",
+                        "relevance": "Deeper detail on bucket ID derivation, MSP value propositions, and on-chain bucket verification."
+                    },
+                    {
+                        "slug": "upload-a-file-via-sdk",
+                        "url": "https://docs.datahaven.xyz/ai/pages/upload-a-file-via-sdk.md",
+                        "relevance": "Deeper detail on the three-step upload flow: storage request, on-chain verification, and MSP upload with receipt confirmation."
+                    },
+                    {
+                        "slug": "retrieve-your-data",
+                        "url": "https://docs.datahaven.xyz/ai/pages/retrieve-your-data.md",
+                        "relevance": "Deeper detail on file key derivation, streaming download, and integrity verification."
+                    },
+                    {
+                        "slug": "file-manipulation-via-sdk",
+                        "url": "https://docs.datahaven.xyz/ai/pages/file-manipulation-via-sdk.md",
+                        "relevance": "Mental model for FileManager, fingerprints, and file keys — useful if the agent needs to understand the data model behind upload operations."
+                    },
+                    {
+                        "slug": "faqs-and-troubleshooting",
+                        "url": "https://docs.datahaven.xyz/ai/pages/faqs-and-troubleshooting.md",
+                        "relevance": "Answers to common SDK questions including package differences, storage costs, bucket management, and file safety guarantees."
+                    },
+                    {
+                        "slug": "known-issues",
+                        "url": "https://docs.datahaven.xyz/ai/pages/known-issues.md",
+                        "relevance": "Current SDK limitations including placeholder return values for getProfile, getInfo, and getBucket methods."
+                    }
+                ]
+            }
+        }
+    ],
+
+    "outputs": {
+        "public_root": "/ai/",
+        "tasks_dir": "tasks"
+    }
+}

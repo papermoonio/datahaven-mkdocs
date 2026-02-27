@@ -91,6 +91,8 @@ plugins:
   - awesome-nav
   - resolve_md:
       llms_config: llms_config.json
+  - agent_tasks:
+      agent_tasks_config: agent_tasks_config.json
   - git-revision-date-localized:
       type: date
       enable_creation_date: true
