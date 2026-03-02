@@ -30,8 +30,8 @@
 
 /* --- Hover effects on buttons --- */
 .ai-file-actions-btn:hover {
-  background-color: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
+  background-color: var(--warm-brown);
+  color: var(--cream);
 }
 
 /* --- Left Button (Copy) --- */
@@ -42,10 +42,9 @@
   border-bottom-left-radius: var(--border-radius);
 }
 
+/* Keep separator stable on hover */
 .ai-file-actions-container:hover .ai-file-actions-copy {
-  border-right-color: var(
-    --border-color
-  ); /* Keep separator stable on hover */
+  border-right-color: var(--border-color);
 }
 
 /* --- Right Button (Trigger) --- */
@@ -56,7 +55,8 @@
 }
 
 .ai-file-actions-trigger.active {
-  background-color: var(--md-default-bg-color);
+  background-color: var(--warm-brown);
+  color: var(--cream);
 }
 
 /* --- Icons --- */
@@ -72,11 +72,12 @@
 .ai-file-actions-icon.loading-spinner {
   margin: 0;
 }
+
 /* Size and color for the chevron icon */
 .ai-file-actions-chevron {
   background-size: 1em 1em;
   transition: transform 0.2s;
-  fill: var(--md-default-fg-color);
+  fill: currentColor;
 }
 
 /* Rotate chevron when active */
@@ -138,8 +139,8 @@
 }
 
 .md-typeset a.ai-file-actions-item:hover {
-  background-color: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
+  background-color: var(--warm-brown);
+  color: var(--cream);
 }
 
 /* --- Table-scoped overrides --- */
@@ -204,6 +205,7 @@
 .ai-file-actions-container .loading-spinner {
   animation: spinner-rotate 2s linear infinite;
 }
+
 .ai-file-actions-container .loading-spinner circle {
   animation: spinner-dash 1.5s ease-in-out infinite;
 }
@@ -213,6 +215,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes spinner-dash {
   0% {
     stroke-dasharray: 1, 150;
