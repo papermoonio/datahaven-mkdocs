@@ -122,7 +122,7 @@ extra:
   generator: False
   social:
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/datahaven
+      link: https://discord.com/invite/datahaven
       name: Discord
     - icon: fontawesome/brands/telegram
       link: https://t.me/datahaven_announcements
