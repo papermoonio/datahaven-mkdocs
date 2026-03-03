@@ -419,7 +419,7 @@
   .md-nav__link .nav-home {
     font-weight: 700;
     display: flex;
-    gap: 0.5em;
+    gap: 0.50em;
     align-items: center;
   }
 
