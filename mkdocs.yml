@@ -59,6 +59,7 @@ markdown_extensions:
   - codehilite
   - md_in_html
   - meta
+  - neoteroi.cards
   - neoteroi.timeline
   - pymdownx.details
   - pymdownx.emoji:
